@@ -1,0 +1,2 @@
+[$HOME/.config/vcsh/repo.d/osx.git]
+checkout = vcsh clone ssh://dottedmag.net/srv/git/leibnitz/dotfiles-osx.git

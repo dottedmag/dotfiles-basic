@@ -1,0 +1,2 @@
+[$HOME/.config/vcsh/repo.d/private.git]
+checkout = vcsh clone ssh://dottedmag.net/srv/git/leibnitz/dotfiles-private.git
