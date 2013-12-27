@@ -123,4 +123,27 @@ gitk() {
   disown
 }
 
-vcsh status
+vcsh status | perl -ne '
+BEGIN
+{
+    my $repo = "";
+}
+
+if ($_ =~ /^\S+:/)
+{
+    $repo = $_;
+    next;
+}
+
+if (/^$/)
+{
+    $repo = "";
+    next;
+}
+if ($repo ne "")
+{
+    print $repo;
+}
+$repo = "";
+print;
+'
