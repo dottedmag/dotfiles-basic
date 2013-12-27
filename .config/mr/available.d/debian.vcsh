@@ -1,0 +1,3 @@
+[$HOME/.config/vcsh/repo.d/debian.git]
+checkout = vcsh clone ssh://dottedmag.net/srv/git/leibnitz/dotfiles-debian.git debian
+

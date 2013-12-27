@@ -1,2 +1,2 @@
 [$HOME/.config/vcsh/repo.d/basic.git]
-checkout = vcsh clone ssh://dottedmag.net/srv/git/leibnitz/dotfiles-basic.git
+checkout = vcsh clone ssh://dottedmag.net/srv/git/leibnitz/dotfiles-basic.git basic
