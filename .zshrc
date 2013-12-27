@@ -122,5 +122,3 @@ gitk() {
   command gitk "$@" 2>/dev/null&
   disown
 }
-
-(cd $HOME/.dotfiles; git status -s)
