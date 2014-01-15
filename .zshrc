@@ -62,9 +62,7 @@ export DEBEMAIL=dottedmag@debian.org
 export DEBFULLNAME="Mikhail Gusarov"
 export EMAIL="Mikhail Gusarov <dottedmag@dottedmag.net>"
 
-if [ -e $HOME/bin/matee ]; then
-	export EDITOR=matee
-elif [ -e $HOME/bin/e ]; then
+if [ -e $HOME/bin/e ]; then
     export EDITOR=e
 elif [ -e /usr/bin/nano ]; then
     export EDITOR=nano
