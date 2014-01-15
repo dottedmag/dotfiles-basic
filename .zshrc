@@ -18,6 +18,7 @@ elif [ -f /mach_kernel ]; then
     if [ $TERM = rxvt-256color ]; then
         export TERM=rxvt
     fi
+
 else
     if [ $TERM = rxvt-256color ]; then
         export TERM=rxvt
@@ -44,6 +45,9 @@ else
   alias ls="ls -phs"
 fi
 
+# ack(1)
+export ACK_PAGER=less
+
 export LESS=-IRS
 
 export RI='--format ansi'
@@ -54,7 +58,23 @@ alias c=cd
 
 alias gdb='gdb -q'
 
+export DEBEMAIL=dottedmag@debian.org
+export DEBFULLNAME="Mikhail Gusarov"
+export EMAIL="Mikhail Gusarov <dottedmag@dottedmag.net>"
+
+if [ -e $HOME/bin/matee ]; then
+	export EDITOR=matee
+elif [ -e $HOME/bin/e ]; then
+    export EDITOR=e
+elif [ -e /usr/bin/nano ]; then
+    export EDITOR=nano
+fi
+
 # Zsh
+
+HISTFILE=$HOME/.zhist
+export HISTSIZE=1000000
+export SAVEHIST=1000000
 
 #
 # $ZSH_VERSION
