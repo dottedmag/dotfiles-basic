@@ -76,10 +76,6 @@ HISTFILE=$HOME/.zhist
 export HISTSIZE=1000000
 export SAVEHIST=1000000
 
-#
-# $ZSH_VERSION
-#
-
 autoload -Uz vcs_info
 
 PS1='[%n@%m:%~]%70(l|
