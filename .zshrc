@@ -2,7 +2,7 @@
 
 # Tools
 
-if [ -f /etc/debian_verion -o -f /etc/ubuntu_version -o -f /etc/altlinux-release ]; then
+if [ -f /etc/debian_version -o -f /etc/ubuntu_version -o -f /etc/altlinux-release ]; then
     # Optimized common case
     export GREP_OPTIONS='--color=auto'
     export GZIP='--rsyncable'
