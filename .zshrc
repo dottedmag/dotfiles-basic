@@ -2,7 +2,8 @@
 
 # Tools
 
-if [ -f /etc/debian_version -o -f /etc/ubuntu_version -o -f /etc/altlinux-release ]; then
+if [ -f /etc/debian_version -o -f /etc/ubuntu_version \
+        -o -f /etc/altlinux-release ]; then
     # Optimized common case
     export GREP_OPTIONS='--color=auto'
     export GZIP='--rsyncable'
@@ -95,7 +96,10 @@ esac
 
 case $TERM in
     xterm*|rxvt*)
-        function preexec { local s=${2//\\/\\\\}; print -nP "\033]2;[zsh@%m:%~]%# $s\007\033]1;[%m:%~]%# $s\007" }
+        function preexec {
+          local s=${2//\\/\\\\};
+          print -nP "\033]2;[zsh@%m:%~]%# $s\007\033]1;[%m:%~]%# $s\007"
+        }
 
         function precmd {
           print -nP "\033]2;[zsh@%m:%~]%#\007\033]1;[%m:%~]%#\007"
