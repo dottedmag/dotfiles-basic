@@ -38,9 +38,9 @@ else
     fi
 fi
 
-if ls --version 2>/dev/null | grep Stallman >/dev/null; then
+if ls --version / 2>/dev/null | grep Stallman >/dev/null; then
   alias ls="ls --color=auto -phs"
-elif ls -FG >/dev/null 2>&1; then
+elif ls -FG / >/dev/null 2>&1; then
   alias ls="ls -FG"
 else
   alias ls="ls -phs"
