@@ -126,9 +126,13 @@ setopt no_bang_hist
 setopt nobeep
 setopt hist_ignore_space
 
-fpath=(~/.zsh/completion ~/.zsh/functions $fpath)
+fpath=(~/.zsh/completion $fpath)
 autoload -U compinit
 compinit
+
+for i in ~/.zsh/functions/*.sh; do
+  . $i
+done
 
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.cache/zsh
@@ -136,11 +140,6 @@ zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/)CVS'
 zstyle ':completion:*:cd:*' ignored-patterns '(*/)#CVS'
 zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/).svn'
 zstyle ':completion:*:cd:*' ignored-patterns '(*/)#.svn'
-
-gitk() {
-  command gitk "$@" 2>/dev/null&
-  disown
-}
 
 vcsh status | perl -ne '
 BEGIN
