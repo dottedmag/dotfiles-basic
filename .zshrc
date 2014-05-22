@@ -126,7 +126,7 @@ setopt no_bang_hist
 setopt nobeep
 setopt hist_ignore_space
 
-fpath=(~/.zsh/completion $fpath)
+fpath=(~/.zsh/completion ~/.zsh/functions $fpath)
 autoload -U compinit
 compinit
 
