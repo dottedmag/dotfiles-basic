@@ -76,6 +76,7 @@ export HISTSIZE=1000000
 export SAVEHIST=1000000
 
 autoload -Uz vcs_info
+zstyle ':vcs_info:*' disable bzr
 
 PS1='[%n@%m:%~]%70(l|
 |)%# '
