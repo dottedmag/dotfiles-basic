@@ -142,7 +142,7 @@ zstyle ':completion:*:cd:*' ignored-patterns '(*/)#CVS'
 zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/).svn'
 zstyle ':completion:*:cd:*' ignored-patterns '(*/)#.svn'
 
-vcsh status | perl -ne '
+vcsh status 2>/dev/null | perl -ne '
 BEGIN
 {
     my $repo = "";
