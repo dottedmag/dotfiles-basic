@@ -6,7 +6,7 @@ if [ -f /mach_kernel ]; then
 fi
 
 if [ -f /mach_kernel ]; then
-  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+  export PATH=/opt/local/bin:/opt/local/sbin:$HOME/Library/Python/2.7/bin:$PATH
 fi
 
 export PATH=$HOME/bin:$HOME/.cabal/bin:$PATH:/sbin:/usr/sbin
