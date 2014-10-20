@@ -8,7 +8,7 @@ if [ -f /etc/debian_version -o -f /etc/ubuntu_version \
     export GREP_OPTIONS='--color=auto'
     export GZIP='--rsyncable'
     eval $(lessfile)
-elif [ -f /mach_kernel ]; then
+elif [ -f /System ]; then
     # Another optimized common case
     export GREP_OPTIONS='--color=auto'
 
