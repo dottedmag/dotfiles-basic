@@ -25,11 +25,11 @@ else
         export TERM=rxvt
     fi
 
-    if grep --version | grep GNU >/dev/null; then
+    if grep 2>&1 --version | grep GNU >/dev/null; then
         export GREP_OPTIONS='--color=auto'
     fi
 
-    if gzip --help | grep --directories=skip rsyncable >/dev/null; then
+    if gzip 2>&1 --help | grep --directories=skip rsyncable >/dev/null; then
         export GZIP='--rsyncable'
     fi
 
