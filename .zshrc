@@ -1,11 +1,5 @@
 # -*- mode:sh -*-
 
-# OS X >= 10.6 sets LC_CTYPE to "UTF-8"
-if [ "$LC_CTYPE" = "UTF-8" ]; then
-  unset LC_CTYPE
-  export LC_ALL=en_US.UTF-8
-fi
-
 # Tools
 
 if [ -f /etc/debian_version -o -f /etc/ubuntu_version \
