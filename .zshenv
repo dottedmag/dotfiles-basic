@@ -6,7 +6,7 @@ if [ "$LC_CTYPE" = "UTF-8" ]; then
   export LC_ALL=en_US.UTF-8
 fi
 
-if [[ -o rcs ]]; then
+if [[ -z "$_PATH_SET" ]]; then
     P="$HOME/Library/Python/2.7"
     if [ -d "$P" ]; then
         export PATH="$P/bin:$PATH"
@@ -28,4 +28,5 @@ if [[ -o rcs ]]; then
     fi
 
     export PATH="$HOME/bin:$PATH:/usr/sbin:/sbin"
+    export _PATH_SET=1
 fi
