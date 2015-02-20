@@ -5,12 +5,12 @@
 if [ -f /etc/debian_version -o -f /etc/ubuntu_version \
         -o -f /etc/altlinux-release ]; then
     # Optimized common case
-    export GREP_OPTIONS='--color=auto'
+    alias grep='grep --color=auto'
     export GZIP='--rsyncable'
     eval $(lessfile)
 elif [ -f /System ]; then
     # Another optimized common case
-    export GREP_OPTIONS='--color=auto'
+    alias grep='grep --color=auto'
 
     if [ $TERM = rxvt-unicode ]; then
         export TERM=rxvt
@@ -26,7 +26,7 @@ else
     fi
 
     if grep 2>&1 --version | grep GNU >/dev/null; then
-        export GREP_OPTIONS='--color=auto'
+        alias grep='grep --color=auto'
     fi
 
     if gzip 2>&1 --help | grep --directories=skip rsyncable >/dev/null; then
