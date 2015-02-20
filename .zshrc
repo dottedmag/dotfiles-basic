@@ -46,12 +46,7 @@ else
   alias ls="ls -phs"
 fi
 
-# ack(1)
-export ACK_PAGER=less
-
 export LESS=-IRS
-
-export RI='--format ansi'
 
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
