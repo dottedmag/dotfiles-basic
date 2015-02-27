@@ -5,8 +5,6 @@
 # Obviously, the remote machine must accept password authentication,
 # or one of the other keys in your ssh-agent, for this to work.
 
-ID_FILE="${HOME}/.ssh/id_rsa.pub"
-
 if [ "-i" = "$1" ]; then
   shift
   # check if we have 2 parameters left, if so the first is the new ID file
@@ -51,4 +49,3 @@ Now try logging into the machine, with "ssh '$host'", and check in:
 to make sure we haven't added extra keys that you weren't expecting.
 
 EOF
-
