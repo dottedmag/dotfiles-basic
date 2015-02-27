@@ -1,0 +1,16 @@
+#!/bin/sh
+
+[ -z "$XDG_CONFIG_HOME" ] && XDG_CONFIG_HOME="$HOME/.config"
+[ -z "$VCSH_REPO_D" ] && VCSH_REPO_D="$XDG_CONFIG_HOME/vcsh/repo.d"
+
+for repo in "$VCSH_REPO_D"/*.git; do
+  if ! [ -d "$repo" -a -r "$repo" ]; then
+      continue
+  fi
+  export GIT_DIR="$repo"
+  S=$(git -c color.status=always status --short --untracked-files=no)
+  if [ -n "$S" ]; then
+      printf "%s\n" $(basename "$repo" .git):
+      printf "%s\n" "$S"
+  fi
+done
