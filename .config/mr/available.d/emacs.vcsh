@@ -1,2 +1,0 @@
-[$HOME/.config/vcsh/repo.d/emacs.git]
-checkout = vcsh clone ssh://dottedmag.net/srv/git/leibnitz/dotfiles-emacs.git emacs

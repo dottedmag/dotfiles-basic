@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ -f ~/.ssh/dottedmag.rsa ]; then
+  BASE_URL=git@github.com:dottedmag/dotfiles-
+else
+  BASE_URL=https://github.com/dottedmag/dotfiles-
+fi
+
+case "$1" in
+  basic|debian|emacs|osx)
+    printf "%s" "${BASE_URL}$1";;
+  j|keys|private)
+    printf "%s" "gcrypt::${BASE_URL}$1";;
+  *)
+    printf "Unknown repository: %s\n" "$1" >&2
+    exit 1;;
+esac
