@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
 
-for "$repo" in "$@"; do
+for repo in "$@"; do
   vcsh clone $(dotfiles "$repo") "$repo"
 done
