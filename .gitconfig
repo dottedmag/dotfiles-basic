@@ -1,0 +1,10 @@
+[push]
+	default = simple
+[alias]
+	ci = commit
+[gpg]
+	program = gpg2
+[gcrypt]
+	publish-participants = true
+[include]
+	path = .gitconfig.user
