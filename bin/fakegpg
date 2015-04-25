@@ -1,0 +1,80 @@
+#!/bin/sh
+set -e
+
+COMMAND=
+OUTPUT=
+
+set_command()
+{
+  if [ -n "$COMMAND" ]; then
+    echo "Two commands specified: $COMMAND $1"
+    exit 2
+  fi
+  COMMAND=$1
+}
+
+LONGOPTS=quiet,yes,batch,use-agent,with-colons,list-only,no-secmem-warning
+LONGOPTS=$LONGOPTS,no-permission-warning,compress-algo:,keyid-format:
+LONGOPTS=$LONGOPTS,list-keys,list-config
+
+TEMP=$(getopt -s sh -o vdeo:r: -l $LONGOPTS -n fakegpg -- "$@")
+
+if [ $? != 0 ]; then
+  exit 2
+fi
+
+eval set -- "$TEMP"
+
+while :; do
+  case "$1" in
+    -d)
+      set_command decrypt; shift;;
+    -e)
+      set_command encrypt; shift;;
+    --list-keys)
+      set_command list-keys; shift;;
+    --list-config)
+      set_command list-config; shift;;
+    --list-only)
+      set_command list-only; shift;;
+    -o)
+      OUTPUT="$2"
+      shift 2;;
+    -v|--quiet|--yes|--batch|--use-agent|--with-colons)
+      shift;;
+    --no-secmem-warning|--no-permission-warning)
+      shift;;
+    -r|--compress-algo|--keyid-format)
+      shift 2;;
+    --)
+      shift
+      break;;
+    *)
+      echo "Internal error, unexpected argument: $1"
+      exit 255;;
+  esac
+done
+
+if [ -z "$COMMAND" ]; then
+  echo "No command specified"
+  exit 2
+fi
+
+case "$COMMAND" in
+  encrypt|decrypt)
+    if [ $# -gt 1 ]; then
+        echo "More than one argument to -e/-d"
+        exit 2
+    fi
+    case ${OUTPUT:+o}$# in
+      o0) cat > "$OUTPUT";;
+      0) cat;;
+      o1) cat "$1" > "$OUTPUT";;
+      1) cat "$1";;
+    esac;;
+  list-keys|list-config|list-only)
+    ;;
+  *)
+    echo "Internal error, unexpected command: $1"
+    exit 255;;
+esac
