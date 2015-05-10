@@ -17,7 +17,7 @@ if [[ -z "$_PATH_SET" ]]; then
         export PATH="$O/bin:$O/sbin:$PATH"
     fi
 
-    G="$HOME/Applications/ghc-7.8.3.app"
+    G="$HOME/Applications/ghc-7.10.1.app"
     if [ -d "$G" ]; then
         export PATH="$G/.cabal/bin:$G/Contents/bin:$PATH"
     fi
