@@ -27,6 +27,11 @@ if [[ -z "$_PATH_SET" ]]; then
         export PATH="$PATH:$R"
     fi
 
+    P=/Applications/Postgres.app/Contents/Versions/9.4/bin
+    if [ -d "$P" ]; then
+        export PATH="$PATH:$P"
+    fi
+
     export PATH="$HOME/bin:$PATH:/usr/sbin:/sbin"
     export _PATH_SET=1
 fi
