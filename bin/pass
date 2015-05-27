@@ -193,7 +193,7 @@ tmpdir() {
 GETOPT="getopt"
 SHRED="shred -f -z"
 
-source "/opt/local/lib/password-store/platform.sh"
+source "platform.sh"
 
 #
 # END platform definable
