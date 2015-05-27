@@ -342,7 +342,7 @@ PRIVDECRYPT()
 {
 	local status_=
 	exec 4>&1 &&
-	status_=$(rungpg --status-fd 3 -q -d 3>&1 1>&4) &&
+	status_=$(rungpg --try-secret-key "$Conf_signkey" --status-fd 3 -q -d 3>&1 1>&4) &&
 	xfeed "$status_" grep "^\[GNUPG:\] ENC_TO " >/dev/null &&
 	(xfeed "$status_" grep -e "$1" >/dev/null || {
 		echo_info "Failed to verify manifest signature!" &&
