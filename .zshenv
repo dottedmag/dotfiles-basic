@@ -32,6 +32,11 @@ if [[ -z "$_PATH_SET" ]]; then
         export PATH="$PATH:$P"
     fi
 
+    H=/usr/local/heroku/bin
+    if [ -d "$H" ]; then
+        export PATH="$PATH:$H"
+    fi
+
     export PATH="$HOME/bin:$PATH:/usr/sbin:/sbin"
     export _PATH_SET=1
 fi
