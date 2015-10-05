@@ -80,14 +80,22 @@ if [ $TERM = screen.rxvt ]; then
     export TERM=rxvt-unicode
 fi
 
+function set_prompt() {
+  WHO_WHERE="[%F{green}%n@%m%f:%~]"
+  EXITCODE="%(?..%B%?%b)"
+  NL_IF_LONG="%70(l|
+|)"
+  VCINFO="%(1v.%F{blue}%1v%f.)"
+  PROMPTSIGN="%B%#%b"
+  export PROMPT="${WHO_WHERE}${EXITCODE}${NL_IF_LONG}${VCINFO}${PROMPTSIGN} "
+}
+
 case $TERM in
     dumb)
         export PROMPT="%#"
         ;;
     *)
-    export PROMPT="[%(!.%S.)%n%(!.%s.)@%m:%~]%(?..%B%?%b)%70(l|
-|)%(1v.%F{blue}%1v%f.)%B%#%b "
-    ;;
+        set_prompt;;
 esac
 
 case $TERM in
