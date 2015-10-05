@@ -72,6 +72,8 @@ export SAVEHIST=1000000
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' disable bzr
+zstyle ':vcs_info:cvs:*' formats ' (%s)%c-'
+zstyle ':vcs_info:cvs:*' actionformats ' (%s)-[%a]%c-'
 
 PS1='[%n@%m:%~]%70(l|
 |)%# '
