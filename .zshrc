@@ -8,7 +8,8 @@ if [ -f /etc/debian_version -o -f /etc/ubuntu_version \
     alias grep='grep --color=auto'
     export GZIP='--rsyncable'
     eval $(lessfile)
-elif [ -f /System ]; then
+    PROMPT_COLOR=green
+elif [ -d /System ]; then
     # Another optimized common case
     alias grep='grep --color=auto'
 
@@ -19,7 +20,7 @@ elif [ -f /System ]; then
     if [ $TERM = rxvt-256color ]; then
         export TERM=rxvt
     fi
-
+    PROMPT_COLOR=blue
 else
     if [ $TERM = rxvt-256color ]; then
         export TERM=rxvt
@@ -36,6 +37,7 @@ else
     if [ -f /usr/bin/lessfile ]; then
         eval $(lessfile)
     fi
+    PROMPT_COLOR=red
 fi
 
 if ls --version / 2>/dev/null | grep Stallman >/dev/null; then
@@ -83,7 +85,7 @@ if [ $TERM = screen.rxvt ]; then
 fi
 
 function set_prompt() {
-  WHO_WHERE="[%F{green}%n@%m%f:%~]"
+  WHO_WHERE="[%F{$PROMPT_COLOR}%n@%m%f:%~]"
   EXITCODE="%(?..%B%?%b)"
   NL_IF_LONG="%70(l|
 |)"
