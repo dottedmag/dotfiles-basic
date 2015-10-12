@@ -48,6 +48,10 @@ else
   alias ls="ls -phs"
 fi
 
+if command -v colordiff >/dev/null; then
+    alias diff=colordiff
+fi
+
 export LESS=-IRS
 
 export PYTHONSTARTUP=$HOME/.pythonrc.py
