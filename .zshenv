@@ -12,11 +12,6 @@ if [[ -z "$_PATH_SET" ]]; then
         PATH="$P:$PATH"
     fi
 
-    O=/opt/local/bin
-    if [ -d "$O" ]; then
-        PATH="$O:/opt/local/sbin:$PATH"
-    fi
-
     G="$HOME/Applications/ghc-7.10.1.app"
     if [ -d "$G" ]; then
         PATH="$G/.cabal/bin:$G/Contents/bin:$PATH"
@@ -24,19 +19,19 @@ if [[ -z "$_PATH_SET" ]]; then
 
     R="$HOME/.gem/ruby/2.0.0/bin"
     if [ -d "$R" ]; then
-        PATH="$PATH:$R"
+        PATH="$R:$PATH"
     fi
 
     P=/Applications/Postgres.app/Contents/Versions/9.4/bin
     if [ -d "$P" ]; then
-        PATH="$PATH:$P"
+        PATH="$P:$PATH"
     fi
 
     H=/usr/local/heroku/bin
     if [ -d "$H" ]; then
-        PATH="$PATH:$H"
+        PATH="$H:$PATH"
     fi
 
-    export PATH="$HOME/bin:$PATH:/usr/sbin:/sbin"
+    export PATH="$HOME/bin:$PATH"
     export _PATH_SET=1
 fi
