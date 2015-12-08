@@ -2,8 +2,7 @@
 
 # Tools
 
-if [ -f /etc/debian_version -o -f /etc/ubuntu_version \
-        -o -f /etc/altlinux-release ]; then
+if [ -f /etc/debian_version -o -f /etc/ubuntu_version ]; then
     # Optimized common case
     alias grep='grep --color=auto'
     export GZIP='--rsyncable'
