@@ -12,7 +12,7 @@ if [[ -z "$_PATH_SET" ]]; then
         PATH="$P:$PATH"
     fi
 
-    G="$HOME/Applications/ghc-7.10.2.app"
+    G="$HOME/Applications/ghc-7.10.3.app"
     if [ -d "$G" ]; then
         PATH="$G/.cabal/bin:$G/Contents/bin:$PATH"
     fi
