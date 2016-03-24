@@ -75,6 +75,10 @@ HISTFILE=$HOME/.zhist
 export HISTSIZE=1000000
 export SAVEHIST=1000000
 
+# Leiningen
+
+export LEIN_GPG=gpg2
+
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' disable bzr
 zstyle ':vcs_info:cvs:*' formats ' (%s)%c-'
