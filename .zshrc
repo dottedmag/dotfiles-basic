@@ -79,6 +79,10 @@ export SAVEHIST=1000000
 
 export LEIN_GPG=gpg2
 
+# Go
+
+export GOPATH=$HOME/g
+
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' disable bzr
 zstyle ':vcs_info:cvs:*' formats ' (%s)%c-'
