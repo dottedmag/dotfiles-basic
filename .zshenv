@@ -6,31 +6,19 @@ if [ "$LC_CTYPE" = "UTF-8" ]; then
   export LC_ALL=en_US.UTF-8
 fi
 
+__ap() {
+  if [ -d "$1" ]; then
+      PATH="$1:$PATH"
+  fi
+}
+
 if [[ -z "$_PATH_SET" ]]; then
-    P="$HOME/Library/Python/2.7/bin"
-    if [ -d "$P" ]; then
-        PATH="$P:$PATH"
-    fi
-
-    G="$HOME/Applications/ghc-7.10.3.app"
-    if [ -d "$G" ]; then
-        PATH="$G/.cabal/bin:$G/Contents/bin:$PATH"
-    fi
-
-    R="$HOME/.gem/ruby/2.0.0/bin"
-    if [ -d "$R" ]; then
-        PATH="$R:$PATH"
-    fi
-
-    P=/Applications/Postgres.app/Contents/Versions/9.4/bin
-    if [ -d "$P" ]; then
-        PATH="$P:$PATH"
-    fi
-
-    H=/usr/local/heroku/bin
-    if [ -d "$H" ]; then
-        PATH="$H:$PATH"
-    fi
+    __ap "$HOME/Library/Python/2.7/bin"
+    __ap "$HOME/.cabal/bin"
+    __ap "$HOME/Applications/ghc-7.10.3.app/Contents/bin"
+    __ap "$HOME/.gem/ruby/2.0.0/bin"
+    __ap /Applications/Postgres.app/Contents/Versions/9.4/bin
+    __ap /usr/local/heroku/bin
 
     export PATH="$HOME/bin:$PATH"
     export _PATH_SET=1
