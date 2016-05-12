@@ -19,6 +19,7 @@ if [[ -z "$_PATH_SET" ]]; then
     __ap "$HOME/.gem/ruby/2.0.0/bin"
     __ap /Applications/Postgres.app/Contents/Versions/9.4/bin
     __ap /usr/local/heroku/bin
+    __ap $HOME/g/bin
 
     export PATH="$HOME/bin:$PATH"
     export _PATH_SET=1
