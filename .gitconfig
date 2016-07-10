@@ -8,3 +8,5 @@
 	publish-participants = true
 [include]
 	path = .gitconfig.user
+[diff]
+        compactionHeuristic = true
