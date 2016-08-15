@@ -10,3 +10,7 @@
 	path = .gitconfig.user
 [diff]
         compactionHeuristic = true
+        algorithm = patience
+        renames = copies
+[color]
+        ui = auto
