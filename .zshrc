@@ -51,7 +51,7 @@ if command -v colordiff >/dev/null; then
     alias diff=colordiff
 fi
 
-export LESS=-IRS
+export LESS=-dFinQRXS
 
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
