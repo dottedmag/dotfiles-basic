@@ -17,3 +17,5 @@
         ff = only
 [color]
         ui = auto
+[transfer]
+        fsckobjects = true
