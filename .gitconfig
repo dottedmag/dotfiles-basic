@@ -12,5 +12,7 @@
         compactionHeuristic = true
         algorithm = patience
         renames = copies
+[merge]
+        ff = only
 [color]
         ui = auto
