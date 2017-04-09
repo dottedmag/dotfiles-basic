@@ -1,23 +1,23 @@
-[push]
-	default = simple
-        followTags = true
 [alias]
-	ci = commit
-[gpg]
-	program = gpg2
-[gcrypt]
-	publish-participants = true
-[include]
-	path = .gitconfig.user
-[diff]
-        compactionHeuristic = true
-        algorithm = patience
-        renames = copies
-[merge]
-        ff = only
+        ci = commit
 [color]
         ui = auto
-[transfer]
-        fsckobjects = true
+[diff]
+        algorithm = patience
+        compactionHeuristic = true
+        renames = copies
+[gcrypt]
+        publish-participants = true
+[gpg]
+        program = gpg2
+[include]
+        path = .gitconfig.user
+[merge]
+        ff = only
 [pull]
         ff = only
+[push]
+        default = simple
+        followTags = true
+[transfer]
+        fsckobjects = true
