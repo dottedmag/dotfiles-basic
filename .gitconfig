@@ -1,5 +1,6 @@
 [push]
 	default = simple
+        followTags = true
 [alias]
 	ci = commit
 [gpg]
