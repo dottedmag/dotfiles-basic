@@ -21,6 +21,13 @@ if [[ -z "$_PATH_SET" ]]; then
     __ap /usr/local/heroku/bin
     __ap $HOME/g/bin
 
+    __ap "$HOME/.perl5/bin"
+    PERL5LIB="$HOME/.perl5/lib/perl5"
+    PERL_LOCAL_LIB_ROOT="/Users/dottedmag/.perl5"
+    PERL_MB_OPT="--install_base \"/Users/dottedmag/.perl5\""
+    PERL_MM_OPT="INSTALL_BASE=/Users/dottedmag/.perl5"
+    export PERL5LIB PERL_LOCAL_LIB_ROOT PERL_MB_OPT PERL_MM_OPT
+
     export PATH="$HOME/bin:$PATH"
     export _PATH_SET=1
 fi
