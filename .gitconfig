@@ -19,3 +19,5 @@
 [push]
         default = simple
         followTags = true
+[http]
+	cookiefile = /Users/dottedmag/.gitcookies
