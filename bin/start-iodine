@@ -1,0 +1,29 @@
+#!/bin/sh
+
+IODINE_IP=10.210.0.1
+
+NS=$(grep nameserver /etc/resolv.conf | awk '{print $2}')
+PASS=$(cat ~/.iodine-pass)
+DEFGW=$(netstat -rn | grep default | awk '{print $2}')
+
+do_route(){
+  sudo route delete default
+  for ns in $NS; do
+    sudo route add $ns -gateway $DEFGW
+  done
+  sudo route add default -gateway $IODINE_IP
+}
+
+#do_route
+
+undo(){
+  sudo route delete default
+  for ns in $NS; do
+    sudo route delete $ns -gateway $DEFGW
+  done
+  sudo route add default -gateway $DEFGW
+}
+
+trap undo EXIT HUP TERM QUIT
+
+sudo iodine -r -P$PASS -f ns.iodine.dottedmag.net iodine.dottedmag.net
