@@ -6,6 +6,8 @@
         algorithm = patience
         compactionHeuristic = true
         renames = copies
+[diff "plist"]
+      textconv = plutil -p
 [gcrypt]
         publish-participants = true
 [gpg]
