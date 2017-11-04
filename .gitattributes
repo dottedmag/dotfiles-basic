@@ -1,1 +1,2 @@
 *.plist diff=plist
+.ssh/known_hosts merge=union
