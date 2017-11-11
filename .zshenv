@@ -13,7 +13,7 @@ __ap() {
 }
 
 if [[ -z "$_PATH_SET" ]]; then
-    __ap "$HOME/Library/Python/3.5/bin"
+    __ap "$HOME/Library/Python/3.6/bin"
     __ap "$HOME/.cabal/bin"
     __ap "$HOME/Applications/ghc-7.10.3.app/Contents/bin"
     __ap "$HOME/.gem/ruby/2.3.0/bin"
