@@ -2,4 +2,4 @@
 username = Mikhail Gusarov <dottedmag@dottedmag.net>
 [extensions]
 mq =
-
+rebase =
