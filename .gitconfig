@@ -10,8 +10,6 @@
       textconv = plutil -p
 [gcrypt]
         publish-participants = true
-[gpg]
-        program = gpg2
 [include]
         path = .gitconfig.user
 [merge]
