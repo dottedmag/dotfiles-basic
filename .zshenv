@@ -19,7 +19,7 @@ if [[ -z "$_PATH_SET" ]]; then
     __ap "$HOME/.gem/ruby/2.3.0/bin"
     __ap /Applications/Postgres.app/Contents/Versions/latest/bin
     __ap /usr/local/heroku/bin
-    __ap $HOME/g/bin
+    __ap $HOME/go/bin
 
     __ap "$HOME/.perl5/bin"
     PERL5LIB="$HOME/.perl5/lib/perl5"
