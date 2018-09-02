@@ -21,3 +21,5 @@
         followTags = true
 [http]
 	cookiefile = /Users/dottedmag/.gitcookies
+[core]
+	commitGraph = true
