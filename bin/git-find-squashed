@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+
+is_squashed() {
+  branch="$1"
+  ancestor_hash=$(git merge-base master "${branch}")
+  tree_id=$(git rev-parse "${branch}^{tree}")
+
+  dangling_commit_id=$(git commit-tree "$tree_id" -p "$ancestor_hash" -m "Temp commit for ${branch}")
+  out=$(git cherry master "$dangling_commit_id")
+
+  expr "$out" : -. >/dev/null
+}
+
+for branch in $(git for-each-ref refs/heads/ --format="%(refname:short)"); do
+  if is_squashed "$branch"; then
+    echo "$branch"
+  fi
+done
