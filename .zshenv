@@ -17,9 +17,17 @@ if [[ -z "$_PATH_SET" ]]; then
     __ap "$HOME/.cabal/bin"
     __ap "$HOME/Applications/ghc-7.10.3.app/Contents/bin"
     __ap "$HOME/.gem/ruby/2.3.0/bin"
+    __ap "$HOME/.cargo/bin"
     __ap /Applications/Postgres.app/Contents/Versions/latest/bin
     __ap /usr/local/heroku/bin
+    __ap $HOME/apps/go/bin
     __ap $HOME/go/bin
+
+    if [ -d $HOME/apps/go/bin ]; then
+      export GOBIN=$HOME/apps/go/bin
+    elif [ -d $HOME/go/bin ]; then
+      export GOBIN=$HOME/go/bin
+    fi
 
     __ap "$HOME/.perl5/bin"
     PERL5LIB="$HOME/.perl5/lib/perl5"
