@@ -145,7 +145,7 @@ setopt hist_ignore_space
 
 fpath=(~/.zsh/completion $fpath)
 autoload -U compinit
-compinit
+compinit -u
 
 for i in ~/.zsh/functions/*.sh; do
   . $i
