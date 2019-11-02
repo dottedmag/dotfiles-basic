@@ -51,8 +51,6 @@ alias c=cd
 
 alias gdb='gdb -q'
 
-alias whois='whois -h whois.lacnic.net'
-
 export DEBEMAIL=dottedmag@debian.org
 export DEBFULLNAME="Mikhail Gusarov"
 export EMAIL="Mikhail Gusarov <dottedmag@dottedmag.net>"
