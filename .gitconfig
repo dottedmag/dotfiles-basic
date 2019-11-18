@@ -23,3 +23,5 @@
 	cookiefile = /Users/dottedmag/.gitcookies
 [core]
 	commitGraph = true
+[credential]
+        helper = store
