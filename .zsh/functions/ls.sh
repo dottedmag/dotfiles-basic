@@ -1,7 +1,7 @@
 # -*- mode: sh -*-
 
 if ls --version / 2>/dev/null | grep Stallman >/dev/null; then
-  alias ls="ls --color=auto --classify --human-readable --size --group-directories-first"
+  alias ls="ls --color=auto --classify --human-readable --size --group-directories-first --dereference-command-line-symlink-to-dir"
 elif ls -FG / >/dev/null 2>&1; then
   alias ls="ls -bFGks"
 else
