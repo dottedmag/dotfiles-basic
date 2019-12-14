@@ -25,3 +25,5 @@
 	commitGraph = true
 [credential]
         helper = store
+[protocol]
+	version = 2
