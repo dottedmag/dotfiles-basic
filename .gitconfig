@@ -1,24 +1,24 @@
 [alias]
-        ci = commit
+	ci = commit
 [color]
-        ui = auto
+	ui = auto
 [diff]
-        algorithm = patience
-        compactionHeuristic = true
-        renames = copies
+	algorithm = histogram
+	compactionHeuristic = true
+	renames = copies
 [diff "plist"]
-      textconv = plutil -p
+	textconv = plutil -p
 [gcrypt]
-        publish-participants = true
+	publish-participants = true
 [include]
-        path = .gitconfig.user
+	path = .gitconfig.user
 [merge]
-        ff = only
+	ff = only
 [pull]
-        ff = only
+	ff = only
 [push]
-        default = simple
-        followTags = true
+	default = simple
+	followTags = true
 [http]
 	cookiefile = /Users/dottedmag/.gitcookies
 [core]
