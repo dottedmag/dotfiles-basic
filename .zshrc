@@ -79,40 +79,6 @@ if [ $TERM = screen.rxvt ]; then
     export TERM=rxvt-unicode
 fi
 
-function set_prompt() {
-  WHO_WHERE="[%F{$PROMPT_COLOR}%n@%m%f:%~]"
-  EXITCODE="%(?..%B%?%b)"
-  NL_IF_LONG="%70(l|
-|)"
-  VCINFO="%(1v.%F{blue}%1v%f.)"
-  PROMPTSIGN="%B%#%b"
-  export PROMPT="${WHO_WHERE}${EXITCODE}${NL_IF_LONG}${VCINFO}${PROMPTSIGN} "
-}
-
-case $TERM in
-    dumb)
-        export PROMPT="%#"
-        ;;
-    *)
-        set_prompt;;
-esac
-
-case $TERM in
-    xterm*|rxvt*)
-        function preexec {
-          local s=${2//\\/\\\\};
-          print -nP "\033]2;[zsh@%m:%~]%# $s\007\033]1;[%m:%~]%# $s\007"
-        }
-
-        function precmd {
-          print -nP "\033]2;[zsh@%m:%~]%#\007\033]1;[%m:%~]%#\007"
-          psvar=()
-          vcs_info
-          [[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
-        }
-        ;;
-esac
-
 slashre=/; export WORDCHARS=${WORDCHARS/$slashre}
 
 setopt no_auto_menu
@@ -143,3 +109,38 @@ zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/)CVS'
 zstyle ':completion:*:cd:*' ignored-patterns '(*/)#CVS'
 zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/).svn'
 zstyle ':completion:*:cd:*' ignored-patterns '(*/)#.svn'
+
+function set_smart_prompt() {
+  WHO_WHERE="[%F{$PROMPT_COLOR}%n@%m%f:%~]"
+  EXITCODE="%(?..%B%?%b)"
+  NL_IF_LONG="%70(l|
+|)"
+  VCINFO="%(1v.%F{blue}%1v%f.)"
+  PROMPTSIGN="%B%#%b"
+  export PROMPT="${WHO_WHERE}${EXITCODE}${NL_IF_LONG}${VCINFO}${PROMPTSIGN} "
+}
+
+case $TERM in
+    dumb)
+        export PROMPT="%#"
+        ;;
+    *)
+        set_smart_prompt;;
+esac
+
+
+case $TERM in
+    xterm*|rxvt*)
+        function preexec {
+          local s=${2//\\/\\\\};
+          print -nP "\033]2;[zsh@%m:%~]%# $s\007\033]1;[%m:%~]%# $s\007"
+        }
+
+        function precmd {
+          print -nP "\033]2;[zsh@%m:%~]%#\007\033]1;[%m:%~]%#\007"
+          psvar=()
+          vcs_info
+          [[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
+        }
+        ;;
+esac
