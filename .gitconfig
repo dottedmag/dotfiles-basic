@@ -23,7 +23,11 @@
 	cookiefile = /Users/dottedmag/.gitcookies
 [core]
 	commitGraph = true
+	pager = diff-so-fancy | less
 [credential]
         helper = store
 [protocol]
 	version = 2
+[diff-so-fancy]
+	markEmptyLines = false
+	stripLeadingSymbols = false
