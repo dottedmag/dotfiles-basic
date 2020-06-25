@@ -23,9 +23,7 @@ if [[ -z "$_PATH_SET" ]]; then
     __ap $HOME/apps/go/bin
     __ap $HOME/go/bin
 
-    if [ -d $HOME/apps/go/bin ]; then
-      export GOBIN=$HOME/apps/go/bin
-    elif [ -d $HOME/go/bin ]; then
+    if [ -d $HOME/go/bin ]; then
       export GOBIN=$HOME/go/bin
     fi
 
