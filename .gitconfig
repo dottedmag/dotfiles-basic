@@ -24,6 +24,7 @@
 [core]
 	commitGraph = true
 	pager = diff-so-fancy | less
+	precomposeUnicode = true
 [credential]
         helper = store
 [protocol]
